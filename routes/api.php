@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\DiagnosisAssignmentController;
+use App\Http\Controllers\PatientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+Route::prefix('/patients')->group(function () {
+    Route::post('/register', [PatientController::class, 'register']);
+    Route::patch('/{patientId}', [PatientController::class, 'update']);
+    Route::get('/list-all', [PatientController::class, 'listAll']);
+    Route::get('/search', [PatientController::class, 'search']);
+    Route::delete('/{patientId}', [PatientController::class, 'delete']);
+});
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('/diagnosis-assignment')->group(function () {
+    Route::post('/register', [DiagnosisAssignmentController::class, 'register']);
+    Route::get('/get-latest', [DiagnosisAssignmentController::class, 'getLatest']);
 });
