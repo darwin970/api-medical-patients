@@ -27,3 +27,11 @@
 
 1. Importar el archivo "MedicalPatients.postman_collection.json" en postman, se debe crear una variable de entorno llamada "host", en donde especificaremos la url local "https://api-medical-patients-34f32d007812.herokuapp.com" ques la api en heroku.
 2. Cada request ya tiene lo neesario para funciona, solo debemos ejecutar la que necesitemos.
+
+
+
+## Diagrama BD
+
+El diagrama de la BD se encuentra en la raiz del proyecto con el nombre "Medical patients.png".
+
+<img src="./Medical patients.png">
