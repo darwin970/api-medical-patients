@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "0b175ce1-6da3-444a-b30d-10a9ae153d8c",
+		"name": "MedicalPatients",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7658603"
+	},
+	"item": [
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Darwin",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Galindez",
+									"type": "text"
+								},
+								{
+									"key": "document",
+									"value": "1075308462",
+									"type": "text"
+								},
+								{
+									"key": "birth_date",
+									"value": "1997-12-26",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "darwin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "3188766607",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/patients/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"patients",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"1\",\n    \"first_name\": \"Darwin\",\n    \"last_name\": \"Galindez B\",\n    \"document\": \"1075308462\",\n    \"birth_date\": \"1997-12-26\",\n    \"email\": \"darwin@gmail.com\",\n    \"phone\": \"3188766607\",\n    \"gender\": \"male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/patients/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"patients",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"patient_id\": 1,\n    \"diagnosis_id\": 1,\n    \"observation\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/patients/list-all",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"patients",
+								"list-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"patient_id\": 1,\n    \"diagnosis_id\": 1,\n    \"observation\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/patients/search?filter=dar",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"patients",
+								"search"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "dar"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"1\",\n    \"first_name\": \"Darwin\",\n    \"last_name\": \"Galindez B\",\n    \"document\": \"1075308462\",\n    \"birth_date\": \"1997-12-26\",\n    \"email\": \"darwin@gmail.com\",\n    \"phone\": \"3188766607\",\n    \"gender\": \"male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/patients/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"patients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DiagnosisAssignment",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"patient_id\": 1,\n    \"diagnosis_id\": 1,\n    \"observation\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/diagnosis-assignment/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"diagnosis-assignment",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get latest",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"patient_id\": 1,\n    \"diagnosis_id\": 1,\n    \"observation\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/diagnosis-assignment/get-latest",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"diagnosis-assignment",
+								"get-latest"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
