@@ -14,6 +14,7 @@
 
 5. Por defecto el proyecto se ejecutara localmente en el puerto 8000 "http://127.0.0.1:8000".
 6. En el archivo postman que existe en la raiz del proyecto, llamado "MedicalPatients.postman_collection.json" es la colección de todas las api's creadas, con su respectivo payload cada una.
+7. Este paso es opcional, se agregaron algunos test unitarios, si se desean validar, se debe ejecutar el comando "php artisan test".
 
 
 
